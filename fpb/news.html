@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>扶贫成果</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/vue.js"></script>
+</head>
+<style type="text/css">
+	#news a img{
+		width:2.2rem;
+		margin-right:0.5rem;
+		display:block;
+	}
+	#news .weui-cells__tips{
+		text-align: right;
+	}
+	#news p{
+		font-size: 16px;
+		margin-top: 16px;
+	}
+</style>
+<body ontouchstart>
+	<div class="backbar">
+		<img id="back" src="../img/back.png" />
+		<div class="title">扶贫成果</div>
+	</div>	
+	<div class="weui-cells" id="news">
+	    <a v-bind:href=item.url class="weui-cell weui-cell_access" v-for="item in items">
+	        <div class="weui-cell__hd"><img v-bind:src=item.img /></div>
+	        <div class="weui-cell__bd">
+	            <p>【{{item.type}}】{{item.title}}</p>
+	  
+	            <div class="weui-cells__tips">{{item.time}}</div>
+	        </div>
+	        
+	    </a>
+	</div>
+	
+	
+</body>
+<script type="text/javascript">
+	new Vue({
+	  el: '#news',
+	  data: {
+	    items:[
+	    	{
+	    		"type":"扶贫速递",
+	    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果 ",
+	    		"url":"article.html",
+	    		"img":"../img/news2.png",
+	    		"time":"2017-8-24"
+	    	},{
+	    		"type":"扶贫速递",
+	    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果 ",
+	    		"url":"article.html",
+	    		"img":"../img/news2.png",
+	    		"time":"2017-8-24"
+	    	},{
+	    		"type":"扶贫速递",
+	    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果 ",
+	    		"url":"article.html",
+	    		"img":"../img/news2.png",
+	    		"time":"2017-8-24"
+	    	}
+
+	    ]
+	  }
+	});
+	var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+</script>
+</html>

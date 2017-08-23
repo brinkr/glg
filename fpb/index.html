@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>高栏港扶贫办</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../css/normalize.css"> -->
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/vue.js"></script>
+</head>
+<body ontouchstart>
+	<div class="weui-tab" style="position: fixed;">
+	    <div class="weui-tab__panel">
+		<div class="backbar">
+			<img id="back" src="../img/back.png" />
+			<div class="title">高栏港扶贫办</div>
+		</div>
+		<div class="banner">
+			<img src="../img/banner_fpb.png" width="100%" />
+		</div>
+		<div class="weui-flex navi">
+		    <div class="weui-flex__item weui-cell_access">
+				<a href="wemp.html">
+			        <img src="../img/wxh.png" />
+			        <p>公众号</p>
+			    </a>
+		    </div>
+		    <div class="weui-flex__item weui-cell_access">
+				<a href="families.html">
+			        <img src="../img/pkjt.png" />
+			        <p>贫困家庭</p>
+			    </a>
+		    </div>
+		    <div class="weui-flex__item weui-cell_access">
+				<a href="news.html">
+			        <img src="../img/fpcg.png" />
+			        <p>扶贫成果</p>
+			    </a>
+		    </div>
+		    <div class="weui-flex__item weui-cell_access">
+				<a href="activities.html">
+			        <img src="../img/axhd.png" />
+			        <p>爱心活动</p>
+			    </a>
+		    </div>    
+		</div>
+
+		<div class="weui-cells" id="fpcg">
+		    <a href="news.html" class="weui-cell weui-cell_access">
+		        <div class="weui-cell__hd"><img src="../img/icon-achievement.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+		        <div class="weui-cell__bd">
+		            <p>扶贫成果</p>
+		        </div>
+		        <div class="weui-cell__ft">更多</div>
+		    </a>
+		    <a v-bind:href=item.url class="weui-cell weui-cell_access" v-for="item in items" >
+		        <div class="weui-cell__hd"><img v-bind:src=item.img style="width:2.5333rem;margin-right:10px;display:block"></div>
+		        <div class="weui-cell__bd">
+		            <p>{{item.title}}</p>
+		        </div>
+		      
+		    </a>
+		</div>
+
+		<div class="weui-cells" id="axhd">
+		    <a href="activities.html" class="weui-cell weui-cell_access">
+		        <div class="weui-cell__hd"><img src="../img/icon-love.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+		        <div class="weui-cell__bd">
+		            <p>爱心活动</p>
+		        </div>
+		        <div class="weui-cell__ft">更多</div>
+		    </a>
+		    <a v-bind:href=item.url class="weui-cell weui-cell_access" v-for="item in items" >
+		        <div class="weui-cell__hd"><img v-bind:src=item.img style="width:2.5333rem;margin-right:10px;display:block"></div>
+		        <div class="weui-cell__bd">
+		            <p>{{item.title}}</p>
+		        </div>
+		      
+		    </a>
+		</div>
+		    </div>
+	    <div class="weui-tabbar tabbar">
+	        <a href="index.html" class="weui-tabbar__item weui-bar__item_on">            
+	            <p class="weui-tabbar__label">首页</p>
+	        </a>
+	        <a href="news.html" class="weui-tabbar__item">	           
+	            <p class="weui-tabbar__label">新闻热点</p>
+	        </a>
+	        <a href="contact.html" class="weui-tabbar__item">	           
+	            <p class="weui-tabbar__label">联系我们</p>
+	        </a>
+	    </div>
+	</div>
+
+	
+</body>
+<script>
+	new Vue({
+	  el: '#fpcg',
+	  data: {
+	    items:[
+	    	{
+	    		"title":"我有一只小毛驴，我从来也不骑~~",
+	    		"url":"article.html",
+	    		"img":"../img/news1.png"
+	    	},{
+	    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果",
+	    		"url":"article.html",
+	    		"img":"../img/news1.png"
+	    	}
+
+	    ]
+	  }
+	});
+		new Vue({
+	  el: '#axhd',
+	  data: {
+	    items:[
+	    	{
+	    		"title":"【爱心活动】高栏港扶贫爱心小组开展春节慰问活动。",
+	    		"url":"http://www.baidu.com",
+	    		"img":"../img/activities.png"
+	    	},{
+	    		"title":"【爱心活动】高栏港扶贫爱心小组开展春节慰问活动。",
+	    		"url":"http://www.baidu.com",
+	    		"img":"../img/activities.png"
+	    	}
+
+	    ]
+	  }
+	});
+		var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+</script>
+</html>

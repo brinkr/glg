@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>贫困家庭</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/vue.js"></script>
+</head>
+<style type="text/css">
+	.top{
+		background-color: #F8F8F8;
+		height: 2rem;
+		display: table-row;
+	}
+	.top>div{
+		display: table-cell;
+		text-align: center;
+		vertical-align: middle;
+		width: 50rem;
+	}
+	.top>div>p:first-of-type{
+		font-size: 16px;
+		font-weight: 555;
+	}
+	.top>div>p:last-of-type{
+		color: #CA332A;
+		font-size: 22px;
+	}
+	.pg_title{
+		display: block;
+		height: 40px;
+		color: #666;
+		margin-top: 0.6rem;
+		margin-left: 0.2rem;
+
+	}
+	.pg_title img{
+		margin-right: 0.2rem;
+		vertical-align: top;
+	}
+	table{
+		border-top: solid 1px #E5E5E5;
+		border-bottom: solid 1px #E5E5E5;
+		width: 100%;
+		text-align: left;
+	}
+	table td{
+		padding: 0.4rem 0;
+		color: #333;
+		font-size: 16px;
+		font-weight: 555;
+		border-bottom: solid 1px #E5E5E5;
+		padding-left: 1rem;
+	}
+	table tr>td:first-of-type{
+		border-right: solid 1px #E5E5E5;
+	}
+</style>
+<body ontouchstart>
+	<div class="backbar">
+		<img id="back" src="../img/back.png" />
+		<div class="title">贫困家庭</div>
+	</div>
+	<div class="top">
+		<div>
+			<p>贫困户总数</p>
+			<p>56</p>
+		</div>
+		<div>
+			<p>贫困总人数</p>
+			<p>186</p>
+		</div>
+	</div>
+
+	<div class="pg_title"><img src="../img/icon-data.png" width="20px;" />扶贫属性数据</div>
+	<table>
+		<tr>
+			<td>五保户：98人</td>
+			<td>残疾户：60人</td>
+		</tr>
+	</table>
+
+	<div class="pg_title"><img src="../img/icon-data.png" width="20px;" />村居贫困人数数据</div>
+	<table>
+		<tr>
+			<td>谢教坡村：10人</td>
+			<td>村头村：23人</td>
+		</tr>
+		<tr>
+			<td>东内村：20人</td>
+			<td>鸡朗村：21人</td>
+		</tr>
+		<tr>
+			<td>村尾村：2人</td>
+			<td>村西村：1人</td>
+		</tr>
+		<tr>
+			<td>立石铺村：9人</td>
+			<td>惠坡村：8人</td>
+		</tr>
+	</table>
+</div>
+	<script>
+			var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+	</script>
+</body>
+</html>

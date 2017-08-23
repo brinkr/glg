@@ -1,0 +1,70 @@
+.backbar{
+	display: block;
+	background-color: #CB322D;
+	height: 1.33333rem;
+}
+.backbar img{
+	height: 0.53333rem;
+	margin: 0.4rem;
+}
+.backbar .title{
+	display: inline-block;
+	height: 1.33333rem;
+	line-height: 1.33333rem;
+	vertical-align: top;
+	width: calc(100% - 2.6rem);
+	text-align: center;
+	font-size: 18px;
+	color: #fff;	
+}
+.navi{
+	padding:0.4rem 0;
+	border-bottom: solid 0.25rem #F2F2F2;
+}
+.navi img{
+	width: 1.546666rem;
+}
+.navi p{
+	margin-top: 0.1rem;
+	font-size: 14px;
+	color: #666;
+}
+.navi .weui-flex__item{
+	text-align: center;
+}
+#axhd{
+	margin-bottom: 0.5rem
+}
+.tabbar p{
+	padding-top: 0.2rem;
+	padding-bottom: 0.3rem;
+	font-size: 18px;
+}
+.tabbar a:nth-child(2){
+	border-left: solid 1px #DFDEE2;
+	border-right: solid 1px #DFDEE2;
+}
+#fpcg{
+	margin-top: 0px;
+}
+#cjgzh{
+	padding-right: 0.1rem;
+}
+#cjgzh .weui-grid__icon{
+	width: 2.6rem;
+	height: 2.6rem;
+}
+#cjgzh .weui-grid__icon img{
+	border: solid 1px #EEEEEE;
+	padding: 0.05rem;
+	border-radius: 0.15rem;
+	margin-top: 0.1rem;
+}
+#cjgzh .weui-grid:after,#cjgzh .weui-grid:before{
+	border: none;
+}
+#cjgzh .weui-grid__label{
+	font-size: 18px;
+	color: #333;
+	margin-bottom: 0.3rem;
+}

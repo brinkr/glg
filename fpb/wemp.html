@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>村居公众号</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/zepto.min.js"></script>
+	<script src="../lib/vue.js"></script>
+</head>
+<body ontouchstart>
+	<div class="backbar">
+		<img id="back" src="../img/back.png" />
+		<div class="title">村居公众号</div>
+	</div>
+	<div class="weui-grids" id="cjgzh">
+    <a href="#" class="weui-grid" v-for="item in items">
+        <p class="weui-grid__label">{{item.title}}</p>
+        <div class="weui-grid__icon">
+            <img v-bind:src=item.img />
+        </div>
+    </a>
+    <div style="display: none;" id="layer">
+	    <div class="weui-mask"></div>
+	    <div class="weui-dialog">
+	        <div class="weui-dialog__hd"><strong class="weui-dialog__title">山格村</strong></div>
+	        <img src="../img/qrcode.png" width="100%" />
+	    </div>
+	</div>
+
+</div>
+	<script>
+		new Vue({
+		  el: '#cjgzh',
+		  data: {
+		    items:[
+		    	{
+		    		"title":"小岗村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	},{
+		    		"title":"华西村",
+		    		"img":"../img/qrcode.png"
+		    	}
+
+		    ]
+		  }
+		});	
+		$(document).ready(function(){
+			$(".weui-mask,.weui-dialog").click(function(){
+				$("#layer").css({"display":"none"});
+			});	
+			$(".weui-grid__icon").click(function(){
+				$("#layer").css({"display":"block"});
+			});
+		});
+		var obj=document.getElementById("back").onclick=function(){window.history.back(-1);};
+	</script>
+</body>
+</html>
