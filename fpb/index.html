@@ -10,14 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
 	<script src="../lib/flexible-min.js"></script>
 	<script src="../lib/vue.js"></script>
+	<style type="text/css">
+		body{
+			padding-top: 0;
+		}
+	</style>
 </head>
 <body ontouchstart>
 	<div class="weui-tab" style="position: fixed;">
 	    <div class="weui-tab__panel">
-		<div class="backbar">
-			<img id="back" src="../img/back.png" />
-			<div class="title">高栏港扶贫办</div>
-		</div>
 		<div class="banner">
 			<img src="../img/banner_fpb.png" width="100%" />
 		</div>
@@ -132,6 +133,6 @@
 	    ]
 	  }
 	});
-		var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+		// var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
 </script>
 </html>

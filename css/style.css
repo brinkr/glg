@@ -1,7 +1,14 @@
+body{
+	padding-top: 1.33333rem;
+}
 .backbar{
 	display: block;
 	background-color: #CB322D;
 	height: 1.33333rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
 }
 .backbar img{
 	height: 0.53333rem;
