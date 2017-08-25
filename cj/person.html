@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>扶贫对象</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/vue.js"></script>
+	<script src="../lib/zepto.min.js"></script>
+	<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
+</head>
+<style type="text/css">
+	.item>div{
+		display: inline-block;
+	}
+	.item{
+		background-color: #F8F8F8;
+		height: 100px;
+		 display: flex;
+		 align-items: center;
+	}
+	.item .index{
+		font-size: 20px;
+		border: solid 1px #ccc;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		margin-left: 0.3rem;
+		margin-right: 0.6rem;
+		color: #999;
+	}
+	.content p:first-of-type{
+		font-size: 16px;
+	}
+	.content p:last-of-type{
+		font-size: 14px;
+		color: #888;
+		margin-top: 0.2rem;
+	}
+	.content p:last-of-type span{
+		display: inline-block;
+		width: 2.2rem;
+	}
+	.content p span{
+		display: inline-block;
+		width: 0.5rem;
+	}
+	.backbar{background-color: #3FB5FF;}
+	.detail{
+		padding:0.3rem 0.5rem;
+		font-size: 14px;
+		color: #666;
+	}
+	.detail p{
+		line-height: 26px;
+	}
+	.detail .health,.detail .memberscount{
+		display: inline-block;
+		margin-right: 2rem;
+	}
+	.pgtitle{
+		display: block;
+		height: 0.8rem;
+		background-color: #F8F8F8;
+	}
+	.pgtitle img{
+		width: 0.4rem;
+		margin-top: 0.2rem;
+		margin-left: 0.5rem;
+		margin-right: 0.2rem;
+		
+	}
+	.pgtitle p{
+		font-size: 16px;
+		line-height: 0.8rem;
+		display: inline-block;
+		height: 26px;
+		vertical-align: top;
+	}
+	.section p{
+		font-size: 14px;
+		color: #666;
+		padding: 0.3rem 0.5rem;
+	}
+	.members{
+		padding: 0 0.5rem;
+	}
+	.member .title{
+		margin-top: 0.3rem;
+		padding:0.1rem 0;
+		border-top: solid 1px #F1F1F1;
+		border-bottom: solid 1px #F1F1F1;
+	}
+	.member .title span{
+		display: inline-block;
+		padding-right: 1.6rem;
+		color: #666;
+	}
+	.member p{
+		line-height: 26px;
+		padding-left: 0.3rem;
+	}
+	.member .age,.member .idno{
+		display: inline-block;
+		margin-right: 1.2rem;
+	}
+	.member .icon{
+		width: 0.4rem;
+		float: right;
+		margin-top: 0.1rem;
+		margin-right:0.5rem;
+	}
+</style>
+<body ontouchstart>
+	<div class="backbar">
+		<img id="back" src="../img/back.png" />
+		<div class="title">帮扶对象</div>
+	</div>  
+	<div class="item">
+		<div class="index">{{index}}</div>
+		<div class="content">
+			<p>{{name}} <span></span> {{age}} <span></span> {{type}}</p>
+			<p><span>{{village}}</span>危房等级：{{level}}</p>
+		</div>			
+	</div>
+	<div class="detail">
+		<p>身份证号：445122166912031032</p>
+		<p class="health">状态：健康</p><p class="memberscount">家庭人数：6</p>
+		<p>学生情况：</p>
+		<p>劳力情况：</p>
+	</div>
+	<div class="pgtitle">
+		<img src="../img/flag.png" />
+		<p>情况说明</p>
+	</div>
+	<div class="section">
+		<p>在家务农，年收入低，女儿读一年级，家庭入不敷出。在家务农，年收入低，女儿读一年级，家庭入不敷出。</p>
+	</div>
+	<div class="pgtitle">
+		<img src="../img/umbrella.png" />
+		<p>帮扶措施</p>
+	</div>
+	<div class="section">
+		<p>集约土地，每年收租金，土地入股分红。</p>
+	</div>
+	<div class="pgtitle">
+		<img src="../img/members.png" />
+		<p>家庭成员</p>
+	</div>
+	<div class="members">
+		<div class="member" v-for="member in members">
+			<div class="title">
+				<span>{{member.type}}：{{member.name}}</span>
+				<span>状态：{{member.health}}</span>
+				<img class="icon" src="../img/down.png">
+			</div>
+			<div>
+				<p class="age">年龄：{{member.age}}</p><p class="idno">身份证号：{{member.idno}}</p>
+				<p>学生情况：{{member.studystatus}}</p>
+				<p>劳力情况：{{member.workstatus}}</p>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script>
+	new Vue({
+	  el: '.item',
+	  data: {
+		
+	    		"index":"001",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	
+	  }
+	});
+	new Vue({
+	  el: '.members',
+	  data: {
+		"members":[
+		{
+			"name":"张瑞燕",
+			"type":"配偶",
+			"health":"健康",
+			"age":"56",
+			"idno":"445122166912031032",
+			"studystatus":"",
+			"workstatus":"东莞打工每月1200元。",
+		},
+		{
+			"name":"邓幸恩",
+			"type":"之女",
+			"health":"健康",
+			"age":"56",
+			"idno":"445122166912031032",
+			"studystatus":"",
+			"workstatus":"东莞打工每月1200元。",
+		}
+
+
+
+		]
+	
+	  }
+	});
+	$(document).ready(function(){
+		$('.icon').click(function(){
+			if($(this).parent().siblings("div").css("display")=="none"){
+				$(this).parent().find(".icon").attr({"src":"../img/down.png"});
+				$(this).parent().siblings("div").css({"display":"block"});				
+			}else{
+				$(this).parent().find(".icon").attr({"src":"../img/up.png"});
+				$(this).parent().siblings("div").css({"display":"none"});				
+			}
+		});
+	});		
+
+    var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+	</script>
+</html>

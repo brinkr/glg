@@ -20,7 +20,7 @@
 		}
 		.swiper-container {
 	        width: 100%;
-	        height: 200px;
+	       
 	    }
 	    .swiper-slide {
 	        text-align: center;
@@ -41,15 +41,60 @@
 	        -webkit-align-items: center;
 	        align-items: center;
 	    }
-	    .weui-tab{
+	    .weui-tabbar{
 			position: fixed;
 			bottom: 0;
+			margin-top: 200px;
 	    }
+	    .swiper-pagination{
+	    	text-align: right;
+	    }
+	    .weui-cell__bd p{
+	    	text-align: left;
+	    }
+	    .swiper-pagination-bullet{
+	    	border: solid 1px rgba(45,179,253,0.5);
+	    }
+		.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+			width: 95%;
+			padding-bottom:0.5rem;
+		}
+		.bar{
+			display: block;
+			height: 24px;
+			padding-top: 0.5rem;
+			padding-left: 0.38rem;
+			border-bottom: solid 1px #F4F4F4;
+			padding-bottom: 0.38rem;
+		}
+		.bar p{
+			display: inline-block;
+			height: 24px;
+			line-height: 24px;
+			vertical-align: top;
+			font-size: 16px;
+		}
+		.weui-cells:after, .weui-cells:before{
+			content: normal;
+		}
+		.swiper-container{
+			border-bottom: solid 0.3rem #f2f2f2;
+			padding-bottom: 0.5rem;
+		}
+		.bar .content{
+			margin-top: 0.7rem;
+			padding-left:0.1rem;
+			padding-right: 0.3rem;
+			line-height: 0.6rem;
+			margin-bottom: 8.2rem;
+		}
+		.weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon, .weui-tabbar__item.weui-bar__item_on .weui-tabbar__icon>i, .weui-tabbar__item.weui-bar__item_on .weui-tabbar__label {
+		    color: #3FB5FF;
+		}
+
 	</style>
 </head>
 <body ontouchstart>
-	
-	    <div class="weui-tab__panel">
 		<!-- <div class="backbar">
 			<img src="../img/back.png" />
 		</div> -->
@@ -64,7 +109,7 @@
 			    </a>
 		    </div>
 		    <div class="weui-flex__item weui-cell_access">
-				<a href="#">
+				<a href="solutions.html">
 			        <img src="../img/fpcs-cj.png" />
 			        <p>扶贫措施</p>
 			    </a>
@@ -76,7 +121,7 @@
 			    </a>
 		    </div>
 		    <div class="weui-flex__item weui-cell_access">
-				<a href="javascript:;">
+				<a href="industry.html">
 			        <img src="../img/tscy-cj.png" />
 			        <p>特色产业</p>
 			    </a>
@@ -88,37 +133,33 @@
 			    </a>
 		    </div>    
 		</div>
-		
+		<div class="bar">
+		      <img src="../img/icon1.png" />		       
+		      <p> 村内新闻</p>
+		</div>   
+		    
 			<div class="swiper-container">
 		        <div class="swiper-wrapper">
-		            <div class="swiper-slide">Slide 1</div>
-		            <div class="swiper-slide">Slide 2</div>
-		            <div class="swiper-slide">Slide 3</div>
-		            <div class="swiper-slide">Slide 4</div>
-		            <div class="swiper-slide">Slide 5</div>
-		        </div>
-		        <!-- Add Pagination -->
+		            <div class="swiper-slide weui-cells" v-for="item in items">
+						<a v-bind:href=item.url class="weui-cell weui-cell_access" >
+					        <div class="weui-cell__hd"><img v-bind:src=item.img style="width:2.5333rem;margin-right:10px;display:block"></div>
+					        <div class="weui-cell__bd">
+					            <p>{{item.title}}</p>
+					        </div>					      
+					    </a>
+		            </div>		           
+		        </div>		        
 		        <div class="swiper-pagination"></div>
 		    </div>
 		
-		<div class="weui-cells" id="axhd">
-		    <a href="#" class="weui-cell weui-cell_access">
-		        <div class="weui-cell__hd"><img src="../img/icon-love.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
-		        <div class="weui-cell__bd">
-		            <p>爱心活动</p>
-		        </div>
-		        <div class="weui-cell__ft">更多</div>
-		    </a>
-		    <a v-bind:href=item.url class="weui-cell weui-cell_access" v-for="item in items" >
-		        <div class="weui-cell__hd"><img v-bind:src=item.img style="width:2.5333rem;margin-right:5px;display:block"></div>
-		        <div class="weui-cell__bd">
-		            <p>{{item.title}}</p>
-		        </div>
-		      
-		    </a>
-		</div>
-		    </div>
-		    <div class="weui-tab">
+		<div class="bar">
+		      <img src="../img/icon1.png" />		       
+		      <p> 珊格村简介</p>
+		      <p class="content"> 珊阁村位于高州市曹江镇南部，距高州市区14公里，距包茂高速出口5公里，距镇政府7公里。珊阁村下辖12条自然村，总户数747户，共3650人。2015年全村农民人均纯收入4300元，年收入低于4000元的贫困户有70户，人口183人，其中五保户21户、21人，低保户17户、45人，扶贫低保户8户、30人，一般贫困户24户、87人，需要危房改造的贫困户有33户。辖区面积约8.5平方公里，其中耕地面积1530亩，山地面积2300亩，经济作物主要以淮山薯、香蕉、甘蔗、荔枝为主。<p>
+		</div> 
+
+	
+		 <div class="weui-tab__panel">   
 	    <div class="weui-tabbar tabbar">
 	        <a href="index.html" class="weui-tabbar__item weui-bar__item_on">            
 	            <p class="weui-tabbar__label">首页</p>
@@ -131,23 +172,39 @@
 	        </a>
 	    </div>
 	</div>
-
+	
 	
 </body>
 <script>
 		new Vue({
-	  el: '#axhd',
-	  data: {
-	    items:[
-	    	{
-	    		"title":"我有一只小毛驴，我从来也不骑~~",
-	    		"url":"http://www.baidu.com",
-	    		"img":"../img/news1.png"
-	    	}
+		  el: '.swiper-wrapper',
+		  data: {
+		    items:[
+		    	{
+		    		"title":"我有一只小毛驴，我从来也不骑~~",
+		    		"url":"article.html",
+		    		"img":"../img/news1.png"
+		    	},{
+		    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果",
+		    		"url":"article.html",
+		    		"img":"../img/news1.png"
+		    	},{
+		    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果",
+		    		"url":"article.html",
+		    		"img":"../img/news1.png"
+		    	},{
+		    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果",
+		    		"url":"article.html",
+		    		"img":"../img/news1.png"
+		    	},{
+		    		"title":"持续用力推进精准扶贫不断巩固提升脱贫攻坚成果",
+		    		"url":"article.html",
+		    		"img":"../img/news1.png"
+		    	}
 
-	    ]
-	  }
-	});
+		    ]
+		  }
+		});
 		  
 	$("document").ready(function(){
 		  var swiper = new Swiper('.swiper-container', {

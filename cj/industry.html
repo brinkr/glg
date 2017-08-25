@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>特色产业</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/vue.js"></script>
+</head>
+<style type="text/css">
+	.backbar{background-color: #3FB5FF;}
+	.item .title{
+		text-align: center;
+		font-size: 20px;
+		margin-bottom: 0.2rem;
+	}
+	.item img{
+		margin-left: 0.3rem;
+		width: calc(100% - 0.6rem);
+		margin-bottom: 0.3rem;
+	}
+	.weui-cells:after, .weui-cells:before{
+		content: normal;
+	}
+	.item .weui-cell_access{
+		border-bottom: solid 0.3rem #F2F1F1;
+	}
+	.weui-cells{
+		margin-top: 0;
+	}
+	.item{
+		padding-top: 0.3rem;
+	}
+</style>
+<body ontouchstart>
+	<div class="backbar">
+		<img id="back" src="../img/back.png" />
+		<div class="title">特殊产业</div>
+	</div>	
+	
+	<div class="weui-cells">
+		<div class="item">
+			<h2 class="title">珊阁村番石榴基地</h2>
+			<img src="../img/industry.png" />
+		    <a href="article.html" class="weui-cell weui-cell_access">
+		        <div class="weui-cell__bd">
+		            <p>查看更多</p>
+		        </div>
+		        <div class="weui-cell__ft"></div>
+		    </a>
+	    </div>
+	    <div class="item">
+			<h2 class="title">珊阁村番石榴基地</h2>
+			<img src="../img/industry.png" />
+		    <a href="article.html" class="weui-cell weui-cell_access">
+		        <div class="weui-cell__bd">
+		            <p>查看更多</p>
+		        </div>
+		        <div class="weui-cell__ft"></div>
+		    </a>
+	    </div>
+	    <div class="item">
+			<h2 class="title">珊阁村番石榴基地</h2>
+			<img src="../img/industry.png" />
+		    <a href="article.html" class="weui-cell weui-cell_access">
+		        <div class="weui-cell__bd">
+		            <p>查看更多</p>
+		        </div>
+		        <div class="weui-cell__ft"></div>
+		    </a>
+	    </div>
+	 </div>
+	
+</body>
+<script type="text/javascript">
+	
+	var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+</script>
+</html>

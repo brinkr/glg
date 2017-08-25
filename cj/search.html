@@ -71,14 +71,14 @@
     
 
 	<div id="items">
-		<div class="item" v-for="item in items">
+		<a href="person.html" class="weui-cell_access item" v-for="item in items">
 			<div class="index">{{item.index}}</div>
 			<div class="content">
 				<p>{{item.name}} | {{item.age}} | {{item.type}}</p>
 				<p><span>{{item.village}}</span>危房等级：{{item.level}}</p>
 			</div>
 
-		</div>		
+		</a>		
 	</div>
 </body>
 <script>
