@@ -78,3 +78,6 @@ body{
 .weui-cells:after, .weui-cells:before{
 	content:normal;
 }
+#news{
+	margin-top: 0;
+}
