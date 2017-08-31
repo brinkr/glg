@@ -120,6 +120,7 @@
             $searchInput = $('#searchInput'),
             $searchClear = $('#searchClear'),
             $searchCancel = $('#searchCancel');
+            // $searchSubmit = $('#searchSubmit');
 
         function hideSearchResult(){
             $searchResult.hide();
@@ -155,6 +156,11 @@
             cancelSearch();
             $searchInput.blur();
         });
+
+	    $('.weui-search-bar__form').submit(function(){
+	    	alert($('#searchInput').val());
+	    });
+
     });
     var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
 	</script>
