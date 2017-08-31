@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>扶贫措施</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../css/weui.min.css">
+	<script type='application/javascript' src='../lib/fastclick.js'></script>
+	<script src="../lib/flexible-min.js"></script>
+	<script src="../lib/vue.js"></script>
+	<script src="../lib/jroll.min.js"></script>
+	<script src="../lib/jroll-infinite.2.2.0.min.js"></script>
+	<script src="../lib/jroll-pulldown.1.0.0.min.js"></script>
+</head>
+<style type="text/css">
+	.weui-cell{
+		padding: 0.5rem 0.9rem;
+	}
+	.backbar{background-color: #3FB5FF;}
+	#wrapper{
+		position: absolute;
+		width: 100%;
+		top: 1.33333rem;
+		bottom: 0;
+	}
+</style>
+<body ontouchstart>
+	<div class="backbar">
+		<img id="back" src="../img/back.png" />
+		<div class="title">扶贫措施</div>
+	</div>	
+	<div id="wrapper">
+		<div class="weui-cells">
+			<!-- <a href="#" class="weui-cell weui-cell_access">
+				<div class="weui-cell__bd">
+					<p>医疗部队</p>
+				</div>
+				<div class="weui-cell__ft"></div>
+			</a> -->
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+FastClick.attach(document.body);
+//模拟ajax
+    function ajax(parms) {
+      var a = [],
+        i;
+      var page = parms.url.replace("getData.do?page=", "");
+      for (i = 1; i <= 5; i++) {
+        a.push({
+          "index": i + (page - 1) * 5,
+          "text": "测试条目测试条目"
+        });
+      }
+      setTimeout(function() {
+        parms.success(a);
+      }, 800);
+    }
+
+ var jroll = new JRoll("#wrapper", { //对指定容器初始化一个jroll对象
+      scrollBarY: true
+    });
+
+	jroll.pulldown({
+      refresh: function(complete) {
+        jroll.options.page = 1;
+	      jroll.scrollTo(0, 44, 0, true);  //滚回顶部
+        ajax({
+          url: "getData.do?page=" + 1,
+          success: function(data) {
+            complete();
+            jroll.scroller.innerHTML = "";    //清空内容
+            jroll.infinite_callback(data);
+          }
+        });
+      }
+    });
+
+    //无限加载
+    jroll.infinite({
+      getData: function(page, callback) { //获取数据的函数，必须传递一个数组给callback
+        ajax({
+          url: "getData.do?page=" + page,
+          success: function(data) {
+            callback(data);
+          }
+        });
+      },
+      template: '<a href="#" class="weui-cell weui-cell_access"><div class="weui-cell__bd"><p>{{=_obj.index}}{{=_obj.text}}</p></div><div class="weui-cell__ft"></div></a>' //每条数据模板
+    });
+
+	
+	var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
+</script>
+</html>
