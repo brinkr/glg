@@ -48,13 +48,24 @@
 		width: 2.2rem;
 	}
 	.backbar{background-color: #3FB5FF;}
+	.weui-search-bar__label span{
+		line-height: 26px;
+	}
+	.weui-search-bar{
+		position: fixed;
+		top: 1.33333rem;
+		width: 100%;
+	}
+	body{
+		padding-top: 2.5rem;;
+	}
 </style>
 <body ontouchstart>
 	<div class="backbar">
 		<img id="back" src="../img/back.png" />
 		<div class="title">贫困户搜索</div>
 	</div>
-<div class="weui-search-bar" id="searchBar">
+	<div class="weui-search-bar" id="searchBar">
         <form class="weui-search-bar__form">
             <div class="weui-search-bar__box">
                 <i class="weui-icon-search"></i>
@@ -95,6 +106,104 @@
 	    		"level":"D 级"
 	    	},{
 	    		"index":"002",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
+	    		"name":"邓兴坤",
+	    		"age":"63岁",
+	    		"type":"五保户，残疾户",
+	    		"village":"谢教坡村",
+	    		"level":"D 级"
+	    	},{
+	    		"index":"003",
 	    		"name":"邓兴坤",
 	    		"age":"63岁",
 	    		"type":"五保户，残疾户",
@@ -160,17 +269,13 @@
 	    // $('.weui-search-bar__form').submit(function(){
 	    // 	alert($('#searchInput').val());
 	    // });
-	    // 
-	    // 
 	     document.onkeydown = keyDownSearch;
-		    function keyDownSearch(e) {
-		        // 兼容FF和IE和Opera    
+		    function keyDownSearch(e) {		       
 		        var theEvent = e || window.event;
-		        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
-		        // 13 代表 回车键
-		        if (code == 13) {
-		            // 要执行的函数 或者点击事件
+		        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;		       
+		        if (code == 13) {		            
 		            alert($('#searchInput').val());
+		            $('#searchInput').val("");
 		            return false;
 		        }
 		        return true;
