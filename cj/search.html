@@ -157,9 +157,24 @@
             $searchInput.blur();
         });
 
-	    $('.weui-search-bar__form').submit(function(){
-	    	alert($('#searchInput').val());
-	    });
+	    // $('.weui-search-bar__form').submit(function(){
+	    // 	alert($('#searchInput').val());
+	    // });
+	    // 
+	    // 
+	     document.onkeydown = keyDownSearch;
+		    function keyDownSearch(e) {
+		        // 兼容FF和IE和Opera    
+		        var theEvent = e || window.event;
+		        var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+		        // 13 代表 回车键
+		        if (code == 13) {
+		            // 要执行的函数 或者点击事件
+		            alert($('#searchInput').val());
+		            return false;
+		        }
+		        return true;
+		    }
 
     });
     var obj=document.getElementById("back").onclick=function(){window.history.back(-1);}	
